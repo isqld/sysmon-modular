@@ -1,0 +1,12 @@
+<Sysmon schemaversion="4.30">
+   <EventFiltering>
+      <RuleGroup name="" groupRelation="or">
+         <FileCreate onmatch="exclude">
+            <Rule groupRelation="and">
+               <Image condition="is">C:\Program Files\Microsoft Azure AD Sync\Bin\miiserver.exe</Image> 
+               <TargetFilename condition="contains all">C:\Users\;\AppData\Local\Temp;.js</TargetFilename>
+            </Rule>
+         </FileCreate>
+      </RuleGroup>
+   </EventFiltering>
+</Sysmon>
