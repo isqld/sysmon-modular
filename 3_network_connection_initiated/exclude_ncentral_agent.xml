@@ -1,0 +1,10 @@
+<Sysmon schemaversion="4.30">
+  <EventFiltering>
+    <RuleGroup name="" groupRelation="or">
+      <NetworkConnect onmatch="exclude">
+        <Image condition="is">C:\Program Files (x86)\N-able Technologies\Windows Agent\bin\agent.exe</Image>
+        <Image condition="is">C:\Program Files (x86)\N-able Technologies\Windows Software Probe\bin\wsp.exe</Image>
+      </NetworkConnect>
+    </RuleGroup>
+  </EventFiltering>
+</Sysmon>
