@@ -3,7 +3,7 @@
     <RuleGroup name="" groupRelation="or">
       <ImageLoad onmatch="exclude">
         <Rule groupRelation="and">
-          <Image condition="contains all"> C:\Program Files;\N-able Technologies\AutomationManagerEngine\;\AutomationManager.ScriptRunner64.exe</Image>
+          <Image condition="contains all">C:\Program Files;\N-able Technologies;\AutomationManager.ScriptRunner64.exe</Image>
         </Rule>
       </ImageLoad>
     </RuleGroup>

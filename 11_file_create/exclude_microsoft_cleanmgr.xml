@@ -4,7 +4,7 @@
          <FileCreate onmatch="exclude">
             <Rule groupRelation="and">
                <Image condition="is">C:\Windows\system32\cleanmgr.exe</Image> 
-               <TargetFilename condition="contains all">C:\Users\;\AppData\Local\Temp;DismHosts.exe</TargetFilename>
+               <TargetFilename condition="contains all">C:\Users\;\AppData\Local\Temp;DismHost.exe</TargetFilename>
             </Rule>
          </FileCreate>
       </RuleGroup>
