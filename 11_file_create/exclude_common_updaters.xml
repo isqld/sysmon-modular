@@ -1,0 +1,23 @@
+<Sysmon schemaversion="4.30">
+   <EventFiltering>
+      <RuleGroup name="" groupRelation="or">
+         <FileCreate onmatch="exclude">
+            <!--Brave Browser Updater-->
+            <Rule groupRelation="and">
+               <Image condition="contains all">C:\Program Files;\BraveSoftware\Update\BraveUpdate.exe</Image>
+               <TargetFilename condition="contains all">C:\Users\;\AppData\Local\Temp;brave_installer;.exe</TargetFilename>
+            </Rule>
+            <!--Dropbox Updater-->
+            <Rule groupRelation="and">
+               <Image condition="contains all">C:\Program Files;\Dropbox\Update\DropboxUpdate.exe</Image>
+               <TargetFilename condition="contains all">C:\Users\;\AppData\Local\Temp;Dropbox;.exe</TargetFilename>
+            </Rule>
+            <!--Teamviewer Updater-->
+            <Rule groupRelation="and">
+               <Image condition="is">C:\Program Files\TeamViewer\TeamViewer.exe</Image>
+               <TargetFilename condition="contains all">C:\Users\;\AppData\Local\Temp;\TeamViewer\update.exe</TargetFilename>
+            </Rule>
+         </FileCreate>
+      </RuleGroup>
+   </EventFiltering>
+</Sysmon>

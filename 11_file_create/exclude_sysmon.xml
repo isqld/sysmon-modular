@@ -1,0 +1,13 @@
+<Sysmon schemaversion="4.30">
+   <EventFiltering>
+      <RuleGroup name="" groupRelation="or">
+         <FileCreate onmatch="exclude">
+            <Rule groupRelation="or">
+               <Image condition="is">c:\Program Files\Sysmon\Sysmon.exe</Image>
+               <Image condition="is">c:\Program Files\Sysmon\Sysmon64.exe</Image>
+               <Image condition="is">c:\Program Files\Sysmon\Sysmon64a.exe</Image>
+            </Rule>
+         </FileCreate>
+      </RuleGroup>
+   </EventFiltering>
+</Sysmon>

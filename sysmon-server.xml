@@ -1409,8 +1409,6 @@
         <TargetFilename condition="end with">.iso</TargetFilename>
         <TargetFilename condition="end with">.img</TargetFilename>
         <TargetFilename condition="end with">.kirbi</TargetFilename>
-        <TargetFilename name="technique_id=T1187,technique_name=Forced Authentication" condition="end with">.lnk</TargetFilename>
-        <TargetFilename name="technique_id=T1187,technique_name=Forced Authentication" condition="end with">.scf</TargetFilename>
         <TargetFilename condition="end with">.application</TargetFilename>
         <TargetFilename condition="end with">.appref-ms</TargetFilename>
         <TargetFilename name="technique_id=T1127,technique_name=Trusted Developer Utilities Proxy Execution" condition="end with">.*proj</TargetFilename>
@@ -1489,6 +1487,18 @@
     <!-- Event ID 11 == FileCreate - Excludes -->
     <RuleGroup groupRelation="or">
       <FileCreate onmatch="exclude">
+        <Rule groupRelation="and">
+          <Image condition="contains all">C:\Program Files;\BraveSoftware\Update\BraveUpdate.exe</Image>
+          <TargetFilename condition="contains all">C:\Users\;\AppData\Local\Temp;brave_installer;.exe</TargetFilename>
+        </Rule>
+        <Rule groupRelation="and">
+          <Image condition="contains all">C:\Program Files;\Dropbox\Update\DropboxUpdate.exe</Image>
+          <TargetFilename condition="contains all">C:\Users\;\AppData\Local\Temp;Dropbox;.exe</TargetFilename>
+        </Rule>
+        <Rule groupRelation="and">
+          <Image condition="is">C:\Program Files\TeamViewer\TeamViewer.exe</Image>
+          <TargetFilename condition="contains all">C:\Users\;\AppData\Local\Temp;\TeamViewer\update.exe</TargetFilename>
+        </Rule>
         <Image condition="is">C:\Program Files (x86)\Dell\CommandUpdate\InvColPC.exe</Image>
         <Rule groupRelation="and">
           <Image condition="is">C:\Program Files\Elastic\Endpoint\elastic-endpoint.exe</Image>
@@ -1541,6 +1551,11 @@
         <TargetFilename condition="begin with">C:\Windows\System32\Tasks\Microsoft\Windows\SoftwareProtectionPlatform\SvcRestartTask</TargetFilename>
         <TargetFilename condition="begin with">C:\Windows\System32\Tasks\Microsoft\Windows\Customer Experience Improvement Program\Server\ServerRoleUsageCollector</TargetFilename>
         <TargetFilename condition="begin with">C:\Windows\System32\Tasks\Microsoft\Windows\Customer Experience Improvement Program\Server\ServerCeipAssistant</TargetFilename>
+        <Rule groupRelation="or">
+          <Image condition="is">c:\Program Files\Sysmon\Sysmon.exe</Image>
+          <Image condition="is">c:\Program Files\Sysmon\Sysmon64.exe</Image>
+          <Image condition="is">c:\Program Files\Sysmon\Sysmon64a.exe</Image>
+        </Rule>
         <Rule groupRelation="and">
           <Image condition="is">C:\Windows\System32\svchost.exe</Image>
           <TargetFilename condition="is">C:\Windows\ServiceProfiles\LocalService\AppData\Local\lastalive0.dat</TargetFilename>
