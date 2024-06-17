@@ -882,6 +882,11 @@
         <Image condition="end with">ownCloud\owncloud.exe</Image>
         <Image condition="is">C:\Program Files\Palo Alto Networks\Traps\cyserver.exe</Image>
         <Rule groupRelation="and">
+          <DestinationPort condition="is">3389</DestinationPort>
+          <User condition="is">NT AUTHORITY\NETWORK SERVICE</User>
+          <DestinationIp condition="is">127.0.0.1</DestinationIp>
+        </Rule>
+        <Rule groupRelation="and">
           <Protocol condition="is">udp</Protocol>
           <DestinationPort condition="is">3389</DestinationPort>
         </Rule>
@@ -1374,7 +1379,6 @@
         <TargetFilename name="technique_id=T1218,technique_name=Office Signed Binary Proxy Execution" condition="end with">\UsageLogs\svchost.exe.log</TargetFilename>
         <TargetFilename name="technique_id=T1218,technique_name=Office Signed Binary Proxy Execution" condition="end with">\UsageLogs\regsvr32.exe.log</TargetFilename>
         <TargetFilename name="technique_id=T1218,technique_name=Office Signed Binary Proxy Execution" condition="end with">\UsageLogs\rundll32.exe.log</TargetFilename>
-        <TargetFilename condition="contains">\Downloads\</TargetFilename>
         <TargetFilename condition="begin with">C:\Windows\System32\Drivers</TargetFilename>
         <TargetFilename condition="begin with">C:\Windows\SysWOW64\Drivers</TargetFilename>
         <Rule groupRelation="and">
