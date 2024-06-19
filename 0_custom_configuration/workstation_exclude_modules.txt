@@ -1,3 +1,4 @@
 11_file_create\include_javascript.xml
 11_file_create\include_links.xml
+15_file_create_stream_hash\include_lnk_shortcuts.xml
 11_file_create\include_downloaded_files.xml

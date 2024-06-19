@@ -4,7 +4,6 @@
       <NetworkConnect onmatch="exclude">
         <Rule groupRelation="and">
           <DestinationPort condition="is">3389</DestinationPort>
-          <User condition="is">NT AUTHORITY\NETWORK SERVICE</User>
           <DestinationIp condition="is">127.0.0.1</DestinationIp>
         </Rule>
       </NetworkConnect>

@@ -883,7 +883,6 @@
         <Image condition="is">C:\Program Files\Palo Alto Networks\Traps\cyserver.exe</Image>
         <Rule groupRelation="and">
           <DestinationPort condition="is">3389</DestinationPort>
-          <User condition="is">NT AUTHORITY\NETWORK SERVICE</User>
           <DestinationIp condition="is">127.0.0.1</DestinationIp>
         </Rule>
         <Rule groupRelation="and">
@@ -1561,6 +1560,10 @@
           <Image condition="is">c:\Program Files\Sysmon\Sysmon64a.exe</Image>
         </Rule>
         <Rule groupRelation="and">
+          <Image condition="is">C:\Windows\system32\WindowsPowerShell\v1.0\powershell.exe</Image>
+          <TargetFilename condition="contains all">C:\Users\;\AppData\Local\Temp;__PSScriptPolicyTest;.ps1</TargetFilename>
+        </Rule>
+        <Rule groupRelation="and">
           <Image condition="is">C:\Windows\System32\svchost.exe</Image>
           <TargetFilename condition="is">C:\Windows\ServiceProfiles\LocalService\AppData\Local\lastalive0.dat</TargetFilename>
         </Rule>
@@ -2020,7 +2023,6 @@
           <TargetFilename condition="end with">:Zone.Identifier</TargetFilename>
           <Contents condition="contains any">blob:;about:internet</Contents>
         </Rule>
-        <TargetFilename condition="end with">.lnk</TargetFilename>
         <TargetFilename condition="contains">Content.Outlook</TargetFilename>
         <TargetFilename name="technique_id=T1059.001,technique_name=PowerShell" condition="end with">.ps1</TargetFilename>
         <TargetFilename name="technique_id=T1059.001,technique_name=PowerShell" condition="end with">.ps2</TargetFilename>

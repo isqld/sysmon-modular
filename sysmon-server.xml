@@ -883,7 +883,6 @@
         <Image condition="is">C:\Program Files\Palo Alto Networks\Traps\cyserver.exe</Image>
         <Rule groupRelation="and">
           <DestinationPort condition="is">3389</DestinationPort>
-          <User condition="is">NT AUTHORITY\NETWORK SERVICE</User>
           <DestinationIp condition="is">127.0.0.1</DestinationIp>
         </Rule>
         <Rule groupRelation="and">
@@ -1560,6 +1559,10 @@
           <Image condition="is">c:\Program Files\Sysmon\Sysmon.exe</Image>
           <Image condition="is">c:\Program Files\Sysmon\Sysmon64.exe</Image>
           <Image condition="is">c:\Program Files\Sysmon\Sysmon64a.exe</Image>
+        </Rule>
+        <Rule groupRelation="and">
+          <Image condition="is">C:\Windows\system32\WindowsPowerShell\v1.0\powershell.exe</Image>
+          <TargetFilename condition="contains all">C:\Users\;\AppData\Local\Temp;__PSScriptPolicyTest;.ps1</TargetFilename>
         </Rule>
         <Rule groupRelation="and">
           <Image condition="is">C:\Windows\System32\svchost.exe</Image>
